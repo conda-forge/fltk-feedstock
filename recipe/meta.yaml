@@ -27,11 +27,25 @@ requirements:
     - zlib
     - jpeg
     - libpng
+    - xorg-libxext
+    - xorg-libxdmcp
+    - xorg-libxau
+    - xorg-libxcb
+    - xorg-libxfixes
+    - xorg-libxrender
+    - xorg-libx11
 
   run:
     - zlib
     - jpeg
     - libpng
+    - xorg-libxext
+    - xorg-libxdmcp
+    - xorg-libxau
+    - xorg-libxcb
+    - xorg-libxfixes
+    - xorg-libxrender
+    - xorg-libx11
 
 test:
   commands:
