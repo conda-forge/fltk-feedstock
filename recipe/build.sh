@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./configure --prefix=$PREFIX --enable-shared
+./configure --prefix=$PREFIX
 make -j${CPU_COUNT}
 make test
 make install
