@@ -34,6 +34,8 @@ requirements:
     - xorg-libxfixes
     - xorg-libxrender
     - xorg-libx11
+    - xorg-libice
+    - xorg-libsm
 
   run:
     - zlib
@@ -46,6 +48,8 @@ requirements:
     - xorg-libxfixes
     - xorg-libxrender
     - xorg-libx11
+    - xorg-libice
+    - xorg-libsm
 
 test:
   commands:
