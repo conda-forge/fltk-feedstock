@@ -48,7 +48,7 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
-    - libglu
+    - libglu    # [linux]
 
   run:
     - zlib
@@ -63,7 +63,7 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
-    - libglu
+    - libglu    # [linux]
 
 test:
   commands:
