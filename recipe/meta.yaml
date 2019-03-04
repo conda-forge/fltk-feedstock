@@ -14,7 +14,7 @@ source:
   md5: {{ md5 }}
 
 build:
-  number: 1001
+  number: 1002
   skip: True  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
 
   host:
     - zlib
@@ -38,6 +39,7 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
+    - libglu
 
   run:
     - zlib
@@ -52,11 +54,14 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
+    - libglu
 
 test:
   commands:
     - test -f $PREFIX/lib/libfltk.a  # [unix]
+    - test -f $PREFIX/lib/libfltk_gl.a  # [unix]
     - if not exist %LIBRARY_LIB%\\fltk.lib exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\fltk_gl.lib exit 1  # [win]
 
 about:
   home: http://www.fltk.org/
