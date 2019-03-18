@@ -13,10 +13,8 @@ source:
   url: http://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ longversion }}-source.tar.bz2
   md5: {{ md5 }}
 
-
 build:
   number: 1003
-  skip: True
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
