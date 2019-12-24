@@ -15,7 +15,7 @@ docker_image:
 jpeg:
 - '9'
 libpng:
-- 1.6.35
+- '1.6'
 pin_run_as_build:
   jpeg:
     max_pin: x
