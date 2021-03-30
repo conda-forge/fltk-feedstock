@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - make   # [unix]
     - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('libselinux') }}        # [linux]
     - {{ cdt('libxcb') }}            # [linux]
