@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 ./configure --prefix=$PREFIX
 cat config.log
 # avoid libc++ conflict with <version>
