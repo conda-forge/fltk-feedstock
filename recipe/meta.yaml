@@ -33,6 +33,7 @@ requirements:
     - {{ cdt('libxext') }}           # [linux]
     - {{ cdt('libxau') }}            # [linux]
     - {{ cdt('mesa-libGL-devel') }}  # [linux]
+    - {{ cdt('expat') }}             # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
 
   host:
