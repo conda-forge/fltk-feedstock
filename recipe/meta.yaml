@@ -14,8 +14,7 @@ source:
   md5: {{ md5 }}
 
 build:
-  number: 1002
-  skip: True  # [win and vc<14]
+  number: 1003
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
