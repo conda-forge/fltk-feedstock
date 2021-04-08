@@ -29,13 +29,6 @@ Current build status
 
 
 <table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://travis-ci.com/conda-forge/fltk-feedstock">
-        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/fltk-feedstock/master.svg?label=macOS">
-      </a>
-    </td>
-  </tr><tr>
     <td>Drone</td>
     <td>
       <a href="https://cloud.drone.io/conda-forge/fltk-feedstock">
@@ -112,6 +105,7 @@ Installing `fltk` from the `conda-forge` channel can be achieved by adding `cond
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `fltk` can be installed with:
@@ -191,4 +185,5 @@ Feedstock Maintainers
 =====================
 
 * [@guyer](https://github.com/guyer/)
+* [@matthiasdiener](https://github.com/matthiasdiener/)
 
