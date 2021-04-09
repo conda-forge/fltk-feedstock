@@ -14,7 +14,7 @@ source:
   md5: {{ md5 }}
 
 build:
-  number: 1002
+  number: 1003
   skip: True  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
@@ -24,7 +24,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - make   # [unix]
+    - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('libselinux') }}        # [linux]
     - {{ cdt('libxcb') }}            # [linux]
     - {{ cdt('libxdamage') }}        # [linux]
@@ -32,7 +33,8 @@ requirements:
     - {{ cdt('libxxf86vm') }}        # [linux]
     - {{ cdt('libxext') }}           # [linux]
     - {{ cdt('libxau') }}            # [linux]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-libGL-devel') }}  # [linux]
+    - {{ cdt('expat') }}             # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
 
   host:
@@ -95,3 +97,4 @@ about:
 extra:
   recipe-maintainers:
     - guyer
+    - matthiasdiener

@@ -1,29 +1,25 @@
 c_compiler:
-- vs2015
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2015
+- vs2017
 jpeg:
 - '9'
 libpng:
-- 1.6.35
+- '1.6'
 pin_run_as_build:
   jpeg:
     max_pin: x
   libpng:
     max_pin: x.x
-  vc:
-    max_pin: x
   zlib:
     max_pin: x.x
+target_platform:
+- win-64
 vc:
 - '14'
-zip_keys:
-- - vc
-  - c_compiler
-  - cxx_compiler
 zlib:
 - '1.2'
