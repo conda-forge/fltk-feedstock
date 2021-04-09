@@ -7,7 +7,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 ./configure --prefix=$PREFIX
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   sed -i.bak 's/fluid test documentation/fluid documentation/' Makefile
 fi
 
