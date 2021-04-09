@@ -11,6 +11,8 @@ source:
   fn: {{ name }}-{{ version }}-source.tar.gz
   url: http://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ version }}-source.tar.bz2
   md5: {{ md5 }}
+  patches:
+    - patches/config.sub.patch
 
 build:
   number: 0
@@ -35,7 +37,7 @@ requirements:
     - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('expat') }}             # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - freetype
+    - freetype                       # [linux]
 
   host:
     - zlib
@@ -51,7 +53,7 @@ requirements:
     - xorg-libice
     - xorg-libsm
     - libglu    # [linux]
-    - freetype
+    - freetype  # [linux]
 
   run:
     - zlib
@@ -67,7 +69,7 @@ requirements:
     - xorg-libice
     - xorg-libsm
     - libglu    # [linux]
-    - freetype
+    - freetype  # [linux]
 
 test:
   commands:
