@@ -7,6 +7,10 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 ./configure --prefix=$PREFIX
 
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+  sed -i.bak 's/fluid test documentation/fluid documentation/' Makefile
+fi
+
 if [[ "$target_platform" == osx-* ]]; then
   # avoid libc++ conflict with <version>
   rm -rf VERSION
