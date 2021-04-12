@@ -2,7 +2,15 @@
 
 set -ex
 
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
+
 ./configure --prefix=$PREFIX
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  # Don't build test/ when cross compiling
+  sed -i.bak 's/fluid test documentation/fluid documentation/' Makefile
+fi
 
 if [[ "$target_platform" == osx-* ]]; then
   # avoid libc++ conflict with <version>
@@ -10,5 +18,9 @@ if [[ "$target_platform" == osx-* ]]; then
 fi
 
 make -j${CPU_COUNT}
-make test
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+  make test
+fi
+
 make install
