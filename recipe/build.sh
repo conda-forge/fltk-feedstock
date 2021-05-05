@@ -5,7 +5,7 @@ set -ex
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
-./configure --prefix=$PREFIX
+./configure --prefix=$PREFIX --enable-shared --disable-static
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   # Don't build test/ when cross compiling
