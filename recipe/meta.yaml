@@ -39,16 +39,13 @@ requirements:
     - xorg-libxfixes
     - libglu    # [linux]
     - jpeg
+    - libpng
 
   host:
     - zlib
-    - libpng
-    - xorg-libxext
     - xorg-libxdmcp
     - xorg-libxau
     - libxcb
-    - xorg-libxfixes
-    - xorg-libxrender
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
