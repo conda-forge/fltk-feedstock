@@ -24,23 +24,24 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make   # [unix]
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libselinux') }}        # [linux]
     - {{ cdt('libxcb') }}            # [linux]
     - {{ cdt('libxdamage') }}        # [linux]
-    - {{ cdt('libxfixes') }}         # [linux]
     - {{ cdt('libxxf86vm') }}        # [linux]
-    - {{ cdt('libxext') }}           # [linux]
     - {{ cdt('libxau') }}            # [linux]
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('expat') }}             # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - freetype                       # [linux]
     - gnuconfig                      # [unix]
+    - xorg-libxext
+    - xorg-libxrender
+    - xorg-libxfixes
+    - libglu    # [linux]
+    - jpeg
 
   host:
     - zlib
-    - jpeg
     - libpng
     - xorg-libxext
     - xorg-libxdmcp
@@ -51,7 +52,6 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
-    - libglu    # [linux]
     - freetype  # [linux]
 
   run:
@@ -73,6 +73,7 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/lib/libfltk.a  # [unix]
+    - test -f $PREFIX/lib/libfltk.so  # [unix]
     - test -f $PREFIX/lib/libfltk_gl.a  # [unix]
     - if not exist %LIBRARY_LIB%\\fltk.lib exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\fltk_gl.lib exit 1  # [win]
