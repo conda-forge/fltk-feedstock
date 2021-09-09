@@ -22,7 +22,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - cmake
+    - cmake  # [win]
     - make   # [unix]
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('libselinux') }}        # [linux]
@@ -42,6 +42,7 @@ requirements:
     - libpng
 
   host:
+    - libpng
     - zlib
     - xorg-libxdmcp
     - xorg-libxau
@@ -50,6 +51,9 @@ requirements:
     - xorg-libice
     - xorg-libsm
     - freetype  # [linux]
+    - xorg-libxext
+    - xorg-libxfixes
+    - xorg-libxrender
 
   run:
     - zlib
