@@ -19,9 +19,3 @@ if errorlevel 1 exit 1
 :: Install.
 nmake install
 if errorlevel 1 exit 1
-
-move %LIBRARY_LIB%\fltk.lib %LIBRARY_LIB%\fltk_static.lib
-move %LIBRARY_LIB%\fltk_forms.lib %LIBRARY_LIB%\fltk_forms_static.lib
-move %LIBRARY_LIB%\fltk_images.lib %LIBRARY_LIB%\fltk_images_static.lib
-move %LIBRARY_LIB%\fltk_gl.lib %LIBRARY_LIB%\fltk_gl_static.lib
-
