@@ -24,36 +24,35 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - make   # [unix]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('libselinux') }}        # [linux]
     - {{ cdt('libxcb') }}            # [linux]
     - {{ cdt('libxdamage') }}        # [linux]
+    - {{ cdt('libxfixes') }}         # [linux]
     - {{ cdt('libxxf86vm') }}        # [linux]
+    - {{ cdt('libxext') }}           # [linux]
     - {{ cdt('libxau') }}            # [linux]
+    - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('expat') }}             # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - freetype                       # [linux]
     - gnuconfig                      # [unix]
-    - xorg-libxext
-    - xorg-libxrender
-    - xorg-libxfixes
-    - libglu    # [linux]
-    - jpeg
-    - libpng
 
   host:
-    - libpng
     - zlib
+    - jpeg
+    - libpng
+    - xorg-libxext
     - xorg-libxdmcp
     - xorg-libxau
     - libxcb
+    - xorg-libxfixes
+    - xorg-libxrender
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
+    - libglu    # [linux]
     - freetype  # [linux]
-    - xorg-libxext
-    - xorg-libxfixes
-    - xorg-libxrender
 
   run:
     - zlib
