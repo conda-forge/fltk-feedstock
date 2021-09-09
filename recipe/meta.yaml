@@ -73,7 +73,7 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/lib/libfltk.a  # [unix]
-    - test -f $PREFIX/lib/libfltk.${SHLIB_EXT}  # [unix]
+    - test -f $PREFIX/lib/libfltk${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/lib/libfltk_gl.a  # [unix]
     - if not exist %LIBRARY_LIB%\\fltk.lib exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\fltk_gl.lib exit 1  # [win]
