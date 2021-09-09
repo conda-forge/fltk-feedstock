@@ -5,7 +5,10 @@ set -ex
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
-./configure --prefix=$PREFIX
+# The build uses DSOFLAGS instead of LDFLAGS for shared libraries
+export DSOFLAGS=$LDFLAGS
+
+./configure --prefix=$PREFIX --enable-shared
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   # Don't build test/ when cross compiling
