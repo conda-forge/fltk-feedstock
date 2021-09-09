@@ -76,9 +76,11 @@ test:
     - test -f $PREFIX/lib/libfltk${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/lib/libfltk_gl.a  # [unix]
     - if not exist %LIBRARY_LIB%\\fltk.lib exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\fltk_forms.lib exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\fltk_images.lib exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\fltk_gl.lib exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\libfltk.lib exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\libfltk.dll exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\libfltk.dll exit 1  # [win]
 
 about:
   home: http://www.fltk.org/
