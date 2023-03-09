@@ -13,7 +13,7 @@ source:
   md5: {{ md5 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
@@ -39,7 +39,7 @@ requirements:
 
   host:
     - zlib
-    - jpeg
+    - libjpeg-turbo
     - libpng
     - xorg-libxext
     - xorg-libxdmcp
@@ -55,7 +55,7 @@ requirements:
 
   run:
     - zlib
-    - jpeg
+    - libjpeg-turbo
     - libpng
     - xorg-libxext
     - xorg-libxdmcp
