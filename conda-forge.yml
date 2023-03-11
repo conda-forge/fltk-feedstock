@@ -11,3 +11,7 @@ github:
 provider:
   linux_aarch64: default
   linux_ppc64le: default
+azure:
+  settings_win:
+    pool:
+      vmImage: windows-2019
