@@ -1,0 +1,14 @@
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 6fb3b5105..cea0f439d 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -119,7 +119,8 @@ CREATE_EXAMPLE (preferences preferences.fl fltk)
+ CREATE_EXAMPLE (offscreen offscreen.cxx fltk)
+ CREATE_EXAMPLE (radio radio.fl fltk)
+ CREATE_EXAMPLE (resize resize.fl fltk)
+-CREATE_EXAMPLE (resizebox resizebox.cxx fltk)
++# See https://github.com/conda-forge/fltk-feedstock/pull/16#issuecomment-1618943251
++# CREATE_EXAMPLE (resizebox resizebox.cxx fltk)
+ CREATE_EXAMPLE (resize-example1 "resize-example1.cxx;resize-arrows.cxx" fltk)
+ CREATE_EXAMPLE (resize-example2 "resize-example2.cxx;resize-arrows.cxx" fltk)
+ CREATE_EXAMPLE (resize-example3a "resize-example3a.cxx;resize-arrows.cxx" fltk)

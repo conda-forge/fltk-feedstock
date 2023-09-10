@@ -8,9 +8,10 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}-source.tar.gz
   url: http://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ version }}-source.tar.bz2
   md5: {{ md5 }}
+  patches:
+    - skip_problematic_test.patch
 
 build:
   number: 1
@@ -54,9 +55,6 @@ requirements:
     - freetype  # [linux]
 
   run:
-    - zlib
-    - libjpeg-turbo
-    - libpng
     - xorg-libxext
     - xorg-libxdmcp
     - xorg-libxau
