@@ -8,12 +8,14 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}-source.tar.gz
   url: http://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ version }}-source.tar.bz2
   md5: {{ md5 }}
+  patches:
+    # This patch will change on the next release....
+    - skip_problematic_test.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
@@ -39,7 +41,7 @@ requirements:
 
   host:
     - zlib
-    - jpeg
+    - libjpeg-turbo
     - libpng
     - xorg-libxext
     - xorg-libxdmcp
@@ -54,9 +56,6 @@ requirements:
     - freetype  # [linux]
 
   run:
-    - zlib
-    - jpeg
-    - libpng
     - xorg-libxext
     - xorg-libxdmcp
     - xorg-libxau
