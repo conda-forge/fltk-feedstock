@@ -16,6 +16,8 @@ libjpeg_turbo:
 - 2.1.5
 libpng:
 - '1.6'
+libxcb:
+- '1.15'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
