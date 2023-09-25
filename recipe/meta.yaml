@@ -15,7 +15,7 @@ source:
     - skip_problematic_test.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
