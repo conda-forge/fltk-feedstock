@@ -3,15 +3,15 @@ About fltk-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fltk-feedstock/blob/main/LICENSE.txt)
 
-Home: http://www.fltk.org/
+Home: https://www.fltk.org/
 
-Package license: LGPL-2.0
+Package license: LGPL-2.0-or-later
 
 Summary: The Fast Light Tool Kit ("FLTK", pronounced "fulltick") is a cross-platform C++ GUI toolkit
 
-Development: http://www.fltk.org/roadmap.php
+Development: https://github.com/fltk/fltk.git
 
-Documentation: http://www.fltk.org/documentation.php
+Documentation: https://www.fltk.org/documentation.php
 
 FLTK (pronounced "fulltick") is a cross-platform C++ GUI toolkit for
 UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides
