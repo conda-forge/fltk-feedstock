@@ -8,14 +8,14 @@ package:
   version: {{ version }}
 
 source:
-  url: http://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ version }}-source.tar.bz2
+  url: https://fltk.org/pub/{{ name }}/{{ version }}/{{ name }}-{{ version }}-source.tar.bz2
   md5: {{ md5 }}
   patches:
     # This patch will change on the next release....
     - skip_problematic_test.patch
 
 build:
-  number: 3
+  number: 4
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
@@ -81,8 +81,8 @@ test:
     - if not exist %LIBRARY_BIN%\\libfltk.dll exit 1  # [win]
 
 about:
-  home: http://www.fltk.org/
-  license: LGPL-2.0
+  home: https://www.fltk.org/
+  license: LGPL-2.0-or-later
   license_family: LGPL
   license_file: COPYING
   summary: The Fast Light Tool Kit ("FLTK", pronounced "fulltick") is a cross-platform C++ GUI toolkit
@@ -97,8 +97,8 @@ about:
     linked, but works fine as a shared library. FLTK also includes an
     excellent UI builder called FLUID that can be used to create
     applications in minutes.
-  doc_url: http://www.fltk.org/documentation.php
-  dev_url: http://www.fltk.org/roadmap.php
+  doc_url: https://www.fltk.org/documentation.php
+  dev_url: https://github.com/fltk/fltk.git
 
 extra:
   recipe-maintainers:
