@@ -16,13 +16,14 @@ source:
     - Window.diff  # [osx]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - make   # [unix]
