@@ -1,5 +1,7 @@
 c_compiler:
 - vs2017
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,8 +13,8 @@ libjpeg_turbo:
 libpng:
 - '1.6'
 libxcb:
-- '1.15'
+- '1.16'
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'
