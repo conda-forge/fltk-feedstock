@@ -8,22 +8,17 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 # The build uses DSOFLAGS instead of LDFLAGS for shared libraries
 export DSOFLAGS=$LDFLAGS
 
-./configure --prefix=$PREFIX --enable-shared
+cmake -D CMAKE_BUILD_TYPE=Release     \
+      -D CMAKE_INSTALL_PREFIX=$PREFIX \
+      -D CMAKE_INSTALL_LIBDIR=lib     \
+      -D FLTK_BUILD_FLUID=ON          \
+      -D FLTK_FLUID_EXECUTABLE=ON     \
+      -D FLTK_BUILD_EXAMPLES=OFF      \
+      -D FLTK_BUILD_TEST=OFF          \
+      -D FLTK_BUILD_SHARED_LIBS=ON    \
+      -D GENERATE_EXPORT_HEADERS=ON   \
+      -D FLTK_BUILD_FORMS=ON          \
+      -D FLTK_USE_GL=ON               \
+      $SRC_DIR
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
-  # Don't build test/ when cross compiling
-  sed -i.bak 's/fluid test documentation/fluid documentation/' Makefile
-fi
-
-if [[ "$target_platform" == osx-* ]]; then
-  # avoid libc++ conflict with <version>
-  rm -rf VERSION
-fi
-
-make -j${CPU_COUNT}
-
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
-  make test
-fi
-
-make install
+make -j${CPU_COUNT} install
