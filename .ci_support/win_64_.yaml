@@ -13,8 +13,10 @@ libjpeg_turbo:
 libpng:
 - '1.6'
 libxcb:
-- '1.16'
+- '1'
 target_platform:
 - win-64
+tk:
+- '8.6'
 zlib:
 - '1'
