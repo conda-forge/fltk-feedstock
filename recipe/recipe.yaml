@@ -49,6 +49,8 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
+    - xorg-libxft
+    - xorg-libxt
     - if: linux
       then:
         - libglu
@@ -64,6 +66,9 @@ requirements:
     - xorg-libx11
     - xorg-libice
     - xorg-libsm
+    - xorg-libxt
+    - xorg-libxft
+
   run_exports:
     - ${{ pin_subpackage("fltk", upper_bound="x.x") }}
 
