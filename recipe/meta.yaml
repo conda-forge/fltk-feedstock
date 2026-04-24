@@ -16,7 +16,7 @@ source:
     - Window.diff  # [osx]
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("fltk", max_pin="x.x") }}
 
@@ -27,17 +27,6 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake  # [win]
     - make   # [unix]
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
-    - {{ cdt('libselinux') }}        # [linux]
-    - {{ cdt('libxcb') }}            # [linux]
-    - {{ cdt('libxdamage') }}        # [linux]
-    - {{ cdt('libxfixes') }}         # [linux]
-    - {{ cdt('libxxf86vm') }}        # [linux]
-    - {{ cdt('libxext') }}           # [linux]
-    - {{ cdt('libxau') }}            # [linux]
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
-    - {{ cdt('expat') }}             # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - freetype                       # [linux]
     - gnuconfig                      # [unix]
 
@@ -57,6 +46,7 @@ requirements:
     - libglu    # [linux]
     - freetype  # [linux]
 
+    - libgl-devel                    # [linux]
   run:
     - xorg-libxext
     - xorg-libxdmcp
