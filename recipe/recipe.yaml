@@ -1,0 +1,110 @@
+# Jinja variables help maintain the recipe as you'll update the version only here.
+context:
+  version: 1.4.0
+
+package:
+  name: fltk
+  version: ${{ version }}
+
+source:
+  url: https://github.com/fltk/fltk/archive/refs/tags/release-${{ version }}.tar.gz
+  sha256: 192a48adaa2060da506ba9961485097203f3461b2262b4bd760a25c068ae4af0
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - pkg-config
+    - if: linux
+      then:
+        - ${{ cdt('mesa-libGL-devel') }}
+        - ${{ cdt('libselinux') }}
+        - ${{ cdt('libxcb') }}
+        - ${{ cdt('libxdamage') }}
+        - ${{ cdt('libxfixes') }}
+        - ${{ cdt('libxxf86vm') }}
+        - ${{ cdt('libxext') }}
+        - ${{ cdt('libxau') }}
+        - ${{ cdt('mesa-libGL-devel') }}
+        - ${{ cdt('expat') }}
+        - ${{ cdt('mesa-dri-drivers') }}
+        - freetype
+
+  host:
+    - zlib
+    - libjpeg-turbo
+    - libpng
+    - xorg-libxext
+    - xorg-libxdmcp
+    - xorg-libxau
+    - libxcb
+    - xorg-libxfixes
+    - xorg-libxrender
+    - xorg-libx11
+    - xorg-libice
+    - xorg-libsm
+    - xorg-libxft
+    - xorg-libxt
+    - if: linux
+      then:
+        - libglu
+        - freetype
+
+  run:
+    - xorg-libxext
+    - xorg-libxdmcp
+    - xorg-libxau
+    - libxcb
+    - xorg-libxfixes
+    - xorg-libxrender
+    - xorg-libx11
+    - xorg-libice
+    - xorg-libsm
+    - xorg-libxt
+    - xorg-libxft
+
+  run_exports:
+    - ${{ pin_subpackage("fltk", upper_bound="x.x") }}
+
+# tests:
+#   commands:
+#     - test -f $PREFIX/lib/libfltk.a  # [unix]
+#     - test -f $PREFIX/lib/libfltk${SHLIB_EXT}  # [unix]
+#     - test -f $PREFIX/lib/libfltk_gl.a  # [unix]
+#     - if not exist %LIBRARY_LIB%\\fltk.lib exit 1  # [win]
+#     - if not exist %LIBRARY_LIB%\\fltk_forms.lib exit 1  # [win]
+#     - if not exist %LIBRARY_LIB%\\fltk_images.lib exit 1  # [win]
+#     - if not exist %LIBRARY_LIB%\\fltk_gl.lib exit 1  # [win]
+#     - if not exist %LIBRARY_LIB%\\libfltk.lib exit 1  # [win]
+#     - if not exist %LIBRARY_BIN%\\libfltk.dll exit 1  # [win]
+
+about:
+  homepage: https://www.fltk.org/
+  license: LGPL-2.0-or-later
+  license_file: COPYING
+  summary: The Fast Light Tool Kit ("FLTK", pronounced "fulltick") is a cross-platform C++ GUI toolkit
+
+  description: |
+    FLTK (pronounced "fulltick") is a cross-platform C++ GUI toolkit for
+    UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides
+    modern GUI functionality without the bloat and supports 3D graphics via
+    OpenGL and its built-in GLUT emulation.
+
+    FLTK is designed to be small and modular enough to be statically
+    linked, but works fine as a shared library. FLTK also includes an
+    excellent UI builder called FLUID that can be used to create
+    applications in minutes.
+  documentation: https://www.fltk.org/documentation.php
+  repository: https://github.com/fltk/fltk.git
+
+extra:
+  recipe-maintainers:
+    - guyer
+    - matthiasdiener
+    - wolfv

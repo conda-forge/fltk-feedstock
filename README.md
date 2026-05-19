@@ -23,7 +23,6 @@ linked, but works fine as a shared library. FLTK also includes an
 excellent UI builder called FLUID that can be used to create
 applications in minutes.
 
-
 Current build status
 ====================
 
@@ -214,4 +213,5 @@ Feedstock Maintainers
 
 * [@guyer](https://github.com/guyer/)
 * [@matthiasdiener](https://github.com/matthiasdiener/)
+* [@wolfv](https://github.com/wolfv/)
 
